@@ -5,7 +5,7 @@ $password="mru222"
 $database="mru222"
 
 mysql_connect(mastelottoplan.backups.uky.edu,$user,$password);
-@mysql_select_db($database) or die("UNABLE TO SELECT DATABASE!!");
+mysql_select_db($database) or die("UNABLE TO SELECT DATABASE!!");
 
 $query="create table Customers(cid integer, fname varchar(20), lname varchar(20), is_reg boolean, PRIMARY KEY (cid));";
 
