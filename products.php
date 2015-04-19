@@ -23,7 +23,7 @@
 
   ?>
 
-  <table>
+  <table border="1px" align="center">
     <tr>
       <td>
       Toys
