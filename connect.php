@@ -8,9 +8,9 @@ Connect to server!
 
 <?php
 
-$user="mru222"
-$password="mru222"
-$database="mru222"
+$user="mru222";
+$password="mru222";
+$database="mru222";
 
 mysql_connect(mastelottoplan.backups.uky.edu,$user,$password);
 mysql_select_db($database) or die("UNABLE TO SELECT DATABASE!!");
