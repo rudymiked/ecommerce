@@ -14,9 +14,16 @@
     </ul>
   </div>
 
+
+<div class="login">
+
+
+
+</div>
+Day:
   <?php
 
-
+echo date("l");
 
 
 
