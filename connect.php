@@ -1,3 +1,11 @@
+<html>
+<head></head>
+<body>
+Connect to server!
+</body>
+</html>
+
+
 <?php
 
 $user="mru222"
