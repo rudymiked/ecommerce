@@ -4,33 +4,41 @@
       Mike Rudy E-Commerece Website
     </title>
   </head>
-
-  <div class="menu">
-    <ul id="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Promotions</a></li>
-      <li><a href="#">Information</a></li>
-    </ul>
-  </div>
+<body>
 
 
-<div class="login">
+<a href="register.php">NEW USERS</a>. <br />
+<a href="login.php">EXISITNG USERS</a>. <br />
+
+<?php
+
+require "connect.php";
+include "header.html";
+
+$link = mysql_connect($host, $user, $password);
+if (!$link) { die('Could not connect to DB: ' . mysql_error());}
 
 
-
-</div>
-Day:
-  <?php
-
-echo date("l");
+/* Products Query */
 
 
+$query = "SELECT * FROM Products;";
+
+mysql_select_db($database);
+
+$result = mysql_query($query, $link); 
+if (!$result) { die('Could not collect data: ' . mysql_error());}
+
+while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+{
+  echo "Products: <br>";
+  echo "{$row['name']} <br>";
+}
 
 
-  ?>
+mysql_close($link);
+?>
 
-
-
+</body>
 
 </html>

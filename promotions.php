@@ -1,29 +1,35 @@
+<?php
+
+require "connect.php";
+include "header.html";
+
+
+
+
+?>
 <html>
-  <head>
-    <title>
-      Mike Rudy E-Commerece Website
-    </title>
-  </head>
+<head></head>
+<body>
 
-  <div class="menu">
-    <ul id="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Promotions</a></li>
-      <li><a href="#">Information</a></li>
-    </ul>
-  </div>
+  <table border="1px" align="center">
+    <tr>
+      <td>
+      Toys
+      </td>
+      <td>
+      Dinosaur
+      </td>
+    </tr>
+    <tr>
+      <td>
+      Games
+      </td>
+      <td>
+      Halo
+      </td>
+    </tr>
+  </table>
 
-  <?php
-
-
-
-
-
-
-  ?>
-
-
-
+</body>
 
 </html>

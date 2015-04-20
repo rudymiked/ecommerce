@@ -1,27 +1,14 @@
+<?php
+
+require "connect.php";
+include "header.html";
+
+
+?>
+
 <html>
-  <head>
-    <title>
-      Mike Rudy E-Commerece Website
-    </title>
-  </head>
-
-  <div class="menu">
-    <ul id="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Promotions</a></li>
-      <li><a href="#">Information</a></li>
-    </ul>
-  </div>
-
-  <?php
-
-
-
-
-
-
-  ?>
+<head></head>
+<body>
 
   <table border="1px" align="center">
     <tr>
@@ -29,7 +16,7 @@
       Toys
       </td>
       <td>
-      Dinosaur
+<!-- LIST OF TOYS -->
       </td>
     </tr>
     <tr>
@@ -37,11 +24,11 @@
       Games
       </td>
       <td>
-      Halo
+<!-- LIST OF GAMES -->
       </td>
     </tr>
   </table>
 
-
+</body>
 
 </html>
