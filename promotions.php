@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "connect.php";
 include "header.html";
 
@@ -11,24 +11,28 @@ include "header.html";
 <head></head>
 <body>
 
+<div class="promos">
+
   <table border="1px" align="center">
-    <tr>
+    <tr style="font-weight:bold;">
       <td>
-      Toys
+        Item
       </td>
       <td>
-      Dinosaur
+        Discount
       </td>
     </tr>
     <tr>
       <td>
-      Games
+  
       </td>
       <td>
-      Halo
+
       </td>
     </tr>
   </table>
+
+</div>
 
 </body>
 

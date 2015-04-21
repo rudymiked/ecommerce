@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $user="mru222";
 $password="mru222";
 $database="mru222";
@@ -8,21 +10,20 @@ $host="mastelottoplan.backups.uky.edu";
 $link = mysql_connect($host,$user,$password);
 mysql_select_db($database) or die("UNABLE TO SELECT DATABASE!!");
 
+/* CUSTOMERS */
+
+$query="create table if not exists Customers(cid integer NOT NULL AUTO_INCREMENT, fname varchar(20), lname varchar(20), email varchar(20), password varchar(30), is_reg boolean, PRIMARY KEY (cid));"; 
+
+$result = mysql_query($query,$link);
+if (!$result) {die('1 Could not do anything!!!: ' . mysql_error());}
 
 /* ORDERS */
 
 $query="Create table if not exists Orders(order_id integer, cid integer, FOREIGN KEY (cid) REFERENCES Customers(cid), status integer, shipDate date, orderDate date, total integer, PRIMARY KEY (order_id));";
 
 $result = mysql_query($query,$link);
-if (!$result) {die('1 Could not do anything!!!: ' . mysql_error());}
-
-
-/* CUSTOMERS */
-
-$query="create table if not exists Customers(cid integer NOT NULL AUTO_INCREMENT, fname varchar(20), lname varchar(20), email varchar(20), is_reg boolean, PRIMARY KEY (cid));"; 
-
-$result = mysql_query($query,$link);
 if (!$result) {die('2 Could not do anything!!!: ' . mysql_error());}
+
 
 /* PRODUCTS */
 
@@ -47,6 +48,10 @@ $query="create table if not exists Promos(promo_id integer AUTO_INCREMENT, disco
 $result = mysql_query($query,$link);
 if (!$result) {die('5 Could not do anything!!!: ' . mysql_error());}
 
+$query="create table if not exists In_Cart (cart_id integer AUTO_INCREMENT, PRIMARY KEY (cart_id), cid integer, FOREIGN KEY (cid) REFERENCES Customers(cid), item varchar(30), quantity integer);";
+
+$result = mysql_query($query,$link);
+if (!$result) {die('5 Could not do anything!!!: ' . mysql_error());}
 
 mysql_close();
 

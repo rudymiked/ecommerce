@@ -1,43 +1,43 @@
-<html>
-  <head>
-    <title>
-      Mike Rudy E-Commerece Website
-    </title>
-  </head>
-<body>
-
-
-<a href="register.php">NEW USERS</a>. <br />
-<a href="login.php">EXISITNG USERS</a>. <br />
-
 <?php
-
+session_start();
 require "connect.php";
 include "header.html";
 
-$link = mysql_connect($host, $user, $password);
-if (!$link) { die('Could not connect to DB: ' . mysql_error());}
+echo $_SESSION['EmailAddr'];
 
-
-/* Products Query */
-
-
-$query = "SELECT * FROM Products;";
-
-mysql_select_db($database);
-
-$result = mysql_query($query, $link); 
-if (!$result) { die('Could not collect data: ' . mysql_error());}
-
-while($row = mysql_fetch_array($result, MYSQL_ASSOC))
-{
-  echo "Products: <br>";
-  echo "{$row['name']} <br>";
-}
-
-
-mysql_close($link);
 ?>
+
+<html>
+<head></head>
+<body>
+
+
+<div class="logo">
+
+<p align="center">
+<b>WELCOME TO MIKE RUDY'S WEBSTORE</b> <br />
+</p>
+
+<br />
+
+<table align="center" cellpadding="16" border="0">
+  <tr>
+    <td>
+      <a class="reglink" href="register.php">NEW USERS</a>
+    </td>
+    <td>
+      <a class="reglink" href="login.php">EXISITNG USERS</a>
+    </td>
+    <td>
+      <a class="reglink" href="emp_login.php">EMPLOYEE LOGIN</a>
+    </td>
+  </tr>
+</table>
+
+<img src="http://www.cs.uky.edu/~mru222/db/Kentucky.gif" width="500px" height="500px" border="0" alt="logo" />
+
+
+</div>
 
 </body>
 
