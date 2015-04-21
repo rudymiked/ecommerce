@@ -48,10 +48,17 @@ $query="create table if not exists Promos(promo_id integer AUTO_INCREMENT, disco
 $result = mysql_query($query,$link);
 if (!$result) {die('5 Could not do anything!!!: ' . mysql_error());}
 
-$query="create table if not exists In_Cart (cart_id integer AUTO_INCREMENT, PRIMARY KEY (cart_id), cid integer, FOREIGN KEY (cid) REFERENCES Customers(cid), item varchar(30), quantity integer);";
+$query="create table if not exists In_Cart (cart_id integer AUTO_INCREMENT, PRIMARY KEY (cart_id), cid integer, FOREIGN KEY (cid) REFERENCES Customers(cid), item varchar(30));";
 
 $result = mysql_query($query,$link);
 if (!$result) {die('5 Could not do anything!!!: ' . mysql_error());}
+
+/* STAFF CART */
+
+$query="create table if not exists Staff_Cart (cart_id integer AUTO_INCREMENT, PRIMARY KEY (cart_id), sid integer, FOREIGN KEY (sid) REFERENCES Staff(sid), item varchar(30));";
+
+$result = mysql_query($query,$link);
+if (!$result) {die('6 Could not do anything!!!: ' . mysql_error());}
 
 mysql_close();
 

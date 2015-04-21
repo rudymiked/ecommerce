@@ -4,6 +4,7 @@ require "connect.php";
 include "header.html";
 
 echo $_SESSION['EmailAddr'];
+echo " <br /><a href=\"shopping_cart.php\">View Shopping Cart</a>";
 
 ?>
 
